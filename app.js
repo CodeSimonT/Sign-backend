@@ -12,11 +12,7 @@ import { connectDB } from "./db/connect.js";
 app.use(morgan("dev"));
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(
-  cors({
-    origin: "htts://Sign-frontend.onrender.com",
-  })
-);
+app.use(cors());
 
 app.use("/users", route); // http://localhost:5000/users/signup
 
